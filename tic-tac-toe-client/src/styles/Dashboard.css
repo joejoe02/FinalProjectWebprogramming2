@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@500&display=swap');
+
+:root {
+  --beige: #f3e5ab;
+  --gold: #d4af37;
+  --dark: #3c3c3c;
+  --light: #ffffff;
+  --accent: #8b5e3c;
+}
+
+.dashboard {
+  padding: 2rem;
+  background-color: var(--beige);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 2rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: var(--dark);
+  text-shadow: 1px 1px 0 var(--accent);
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 5px;
+  background: var(--gold);
+  bottom: -10px;
+  left: 20%;
+  border-radius: 2px;
+}
+
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-section {
+  background-color: var(--light);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border: 2px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--accent);
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+}
+
+.user-list, .match-list {
+  max-height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 0.5rem;
+}
+
+.user-item, .match-item {
+  background-color: var(--light);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.user-item:hover, .match-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.user-item.online {
+  border-color: var(--gold);
+  background-color: #fdf6e3;
+}
+
+.user-item.offline {
+  background-color: #eee;
+  opacity: 0.6;
+}
+
+.user-info, .match-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--dark);
+}
+
+.user-status {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.challenge-btn {
+  background-color: var(--gold);
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--gold);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.challenge-btn:hover {
+  background-color: #c7a437;
+}
+
+.accept-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accept-btn:hover {
+  background-color: #45a049;
+}
+
+.decline-btn {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.decline-btn:hover {
+  background-color: #c62828;
+}
+
+
+.match-players {
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.match-status {
+  margin-top: 0.5rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-badge.ongoing {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.status-badge.finished {
+  background-color: var(--gold);
+  color: white;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.challenge-popup {
+  background-color: #f5e7c5;
+  border: 3px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem auto 2rem;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  max-width: 25%;
+  text-align: center;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.challenge-popup h3 {
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+.challenge-text {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.challenge-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.03);
+  }
+}
+
+.self-indicator {
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--accent);
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: bold;
+}

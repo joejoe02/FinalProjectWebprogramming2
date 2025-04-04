@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@500&display=swap');
+
+.welcome-container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #f8f1e4;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.welcome-card {
+  background-color: #fffaf3;
+  border: 2px solid #d4c3aa;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  max-width: 1000px;
+  min-height: 600px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.welcome-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #8b6f47;
+}
+
+.welcome-input {
+  font-size: 1.2rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid #cbbf9e;
+  width: 100%;
+  max-width: 350px;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.3s ease;
+  margin: 0 auto;
+}
+
+
+.welcome-input:focus {
+  border-color: #a78b65;
+}
+
+.welcome-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background-color: #b8926a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-button:hover {
+  background-color: #a77d4f;
+}
+
+.welcome-button:active {
+  transform: translateY(2px);
+}
